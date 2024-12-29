@@ -1,0 +1,8 @@
+langchain==0.2.15
+langchain_google_genai==1.0.10
+protobuf==5.28.0
+PyPDF2==3.0.1
+python-dotenv==1.0.1
+Requests==2.32.3
+streamlit==1.30.0
+youtube_search_python==1.6.6
