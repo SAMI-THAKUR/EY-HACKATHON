@@ -311,6 +311,37 @@ const login = async (req, res) => {
   }
 };
 
+const getUserProfile = async (req, res) => {
+  const { userId } = req.params; // Ensure userId is passed as a route parameter
+  try {
+    const user = await db.user.findUnique({
+      where: { id: userId },
+      include: {
+        resumes: true,
+        posts: true,
+        mockInterviews: true,
+        userSkills: {
+          include: {
+            skill: true,
+          },
+        },
+        events: true,
+        careerPaths: true,
+        learningResources: true,
+      },
+    });
+
+    if (!user) {
+      return res.status(404).json({ success: false, message: "User not found." });
+    }
+
+    res.status(200).json({ success: true, user });
+  } catch (error) {
+    console.error("Error fetching user profile:", error);
+    res.status(500).json({ success: false, message: "Failed to fetch user profile." });
+  }
+};
+
 module.exports = {
   getUser,
   createUserPortfolio,
@@ -324,6 +355,7 @@ module.exports = {
   listMockInterviews,
   addSkillToUser,
   removeSkillFromUser,
-  createUser, // Exported createUser
-  login, // Exported login
+  createUser,
+  login,
+  getUserProfile, // Export the new function
 };

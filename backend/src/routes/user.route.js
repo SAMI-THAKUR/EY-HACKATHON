@@ -14,6 +14,7 @@ const {
   addSkillToUser,
   removeSkillFromUser,
   createUser,
+  getUserProfile // Added getUserProfile
 } = require("../controller/user.controller");
 
 router.get("/getuser", getUser);
@@ -54,8 +55,8 @@ router.get('/profiles', async (req, res) => {
     res.status(500).json({ error: "Failed to fetch profiles." });
   }
 });
-// router.get('/getuser', userController.getUser);
 
-// router.post('/users', userController.createUser);
+// Update the route to include userId as a route parameter
+router.get('/getUserProfile/:userId', getUserProfile);
 
 module.exports = router;
