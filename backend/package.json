@@ -4,13 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "npm run prisma:push && nodemon src/index.js",
+    "prisma:generate": "prisma generate --schema=src/db/prisma/schema.prisma",
+    "prisma:push": "prisma db push --schema=src/db/prisma/schema.prisma",
+    "seed": "ts-node src/db/prisma/seed.ts",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.18.0",
+    "axios": "^1.7.9",
+    "axios-cookiejar-support": "^5.0.5",
+    "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
@@ -23,5 +30,12 @@
     "passport-local": "^1.0.0",
     "prisma": "^5.18.0",
     "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "prisma": "^5.18.0",
+    "supertest": "^7.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.0.0"
   }
 }

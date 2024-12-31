@@ -4,8 +4,8 @@ const verifyJWT = require("../middleware/auth.middlerware");
 
 const authRouter = express.Router();
 const {
-  RegisterControlloer,
-  LoginControlloer,
+  RegisterController,       // Corrected from RegisterControlloer
+  LoginController,          // Corrected from LoginControlloer
   LogoutController,
   validateToken,
 } = require("../controller/auth.controller");
@@ -38,8 +38,8 @@ authRouter.get(
   }
 );
 
-authRouter.post("/register", RegisterControlloer);
-authRouter.post("/login", LoginControlloer);
+authRouter.post("/register", RegisterController);  // Updated reference
+authRouter.post("/login", LoginController);        // Updated reference
 authRouter.post("/logout", verifyJWT, LogoutController);
 authRouter.post("/validate", validateToken);
 
