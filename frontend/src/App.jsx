@@ -7,6 +7,7 @@ import Login from "./Pages/auth/Login";
 import ProtectedPage from "./components/ProtectedPage";
 // import Home from "./Pages/Home";
 import Layout from "./components/Layout";
+import Landings from "./landingPages/Landings.jsx";
 // import Generate from "./Pages/Generate";
 // import Calendar from "./Pages/Calendar";
 // import Profile from "./Pages/Profile";
@@ -19,7 +20,7 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {loading && <Spinner />}
       <BrowserRouter>
         <Routes>
@@ -30,6 +31,12 @@ const App = () => {
                 <Home />
               </Layout>
             }
+          />
+          <Route
+          path="/landing-pages"
+          element={
+              <Landings/>
+          }
           />
           <Route
             path="/dashboard/:subject"
