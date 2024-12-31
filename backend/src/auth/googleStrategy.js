@@ -4,6 +4,7 @@ const { PrismaClient } = require("@prisma/client");
 require("dotenv").config();
 const { generateAccessAndRefreshTokens } = require("../controller/auth.controller");
 const prisma = new PrismaClient();
+
 passport.use(
   new GoogleStrategy(
     {

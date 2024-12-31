@@ -3,17 +3,173 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-
+  provider = "mongodb"
+  url      = "mongodb+srv://kunaldp379:eyhack2024@cluster0.7vwgn.mongodb.net/EY?retryWrites=true&w=majority&appName=Cluster0"
 }
 
 model User {
-  id         Int      @id @default(autoincrement())
-  username   String?   
-  email      String   @unique
-  password   String?
-  googleId   String? @unique
-  thumbnail  String?
-  refreshToken  String? 
+  id               String          @id @default(auto()) @map("_id") @db.ObjectId
+  username         String
+  email            String          @unique
+  password         String?
+  googleId         String?         // Removed @unique to allow multiple nulls
+  thumbnail        String?
+  refreshToken     String?
+  profileCompleted Boolean         @default(false)
+  preferences      Json?
+  resumes          Resume[]        @relation("UserResumes")
+  posts            CommunityPost[] @relation("UserPosts")
+  mockInterviews   MockInterview[] @relation("UserMockInterviews")
+  userSkills       UserSkill[]
+  additionalInfo   Json?           // Flexible field for future data
+  events           Event[]         @relation("UserEvents")
+  careerPaths      CareerPath[]    @relation("UserCareerPaths")
+  learningResources LearningResource[] @relation("UserLearningResources")
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+}
+
+model Skill {
+  id                      String                   @id @default(auto()) @map("_id") @db.ObjectId
+  name                    String
+  description             String
+  category                String
+  dependencies            Json?                    // Skill relationships and prerequisites
+  industryMappings        Json?                    // Mapping to specific industries
+  userSkills              UserSkill[]
+  jobSkills               JobSkill[]
+  learningResourceSkills  LearningResourceSkill[]
+  careerPathSkills        CareerPathSkill[]
+  additionalInfo          Json?                    // additionalInfo if required
+  createdAt               DateTime                 @default(now())
+}
+
+model Job {
+  id                String      @id @default(auto()) @map("_id") @db.ObjectId
+  title             String
+  description       String
+  company           String
+  requirements      Json?       // Required skills and qualifications
+  location          String
+  jobSkills         JobSkill[]
+  marketTrends      Json?       // Google Trends data or other insights
+  matchingCriteria  Json?       // Custom matching algorithms for users
+  additionalInfo    Json?   
+  createdAt         DateTime    @default(now())
+}
+
+model Resume {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId          String   @db.ObjectId
+  resumeData      Json
+  version         Int      @default(1)
+  metadata        Json?   
+  additionalInfo  Json?   // additionalInfo if required
+  uploadDate      DateTime @default(now())
+  user            User     @relation("UserResumes", fields: [userId], references: [id])
+}
+
+model LearningResource {
+  id                      String                 @id @default(auto()) @map("_id") @db.ObjectId
+  title                   String
+  type                    String                 // course, video, article
+  platform                String                 // Udemy, Coursera, YouTube
+  link                    String
+  tags                    String[]
+  learningResourceSkills  LearningResourceSkill[]
+  learningPath            Json?
+  additionalInfo          Json?                 // Flexible field for future data
+  createdAt               DateTime              @default(now())
+  userId                  String                @db.ObjectId
+  user                    User                  @relation("UserLearningResources", fields: [userId], references: [id])
+}
+
+model CommunityPost {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId          String   @db.ObjectId
+  content         String
+  tags            String[]
+  likes           Int      @default(0)
+  comments        Json?    
+  additionalInfo  Json?    // additionalInfo if required
+  createdAt       DateTime @default(now())
+  user            User     @relation("UserPosts", fields: [userId], references: [id])
+}
+
+model Event {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  title           String
+  description     String
+  location        String
+  date            DateTime
+  participants    Json?
+  additionalInfo  Json?    // additionalInfo if required
+  createdAt       DateTime @default(now())
+  userId          String   @db.ObjectId
+  user            User     @relation("UserEvents", fields: [userId], references: [id])
+}
+
+model MockInterview {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId          String   @db.ObjectId
+  questions       Json
+  assessment      Json
+  performanceData Json?   
+  additionalInfo  Json?  
+  createdAt       DateTime @default(now())
+  user            User     @relation("UserMockInterviews", fields: [userId], references: [id])
+}
+
+model CareerPath {
+  id              String          @id @default(auto()) @map("_id") @db.ObjectId
+  title           String
+  description     String
+  roles           Json            // List of roles 
+  careerPathSkills CareerPathSkill[]
+  additionalInfo  Json?    
+  createdAt       DateTime        @default(now())
+  userId          String          @db.ObjectId
+  user            User            @relation("UserCareerPaths", fields: [userId], references: [id])
+}
+
+// Updated Join Models
+
+model UserSkill {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  user      User    @relation(fields: [userId], references: [id])
+  userId    String  @db.ObjectId
+  skill     Skill   @relation(fields: [skillId], references: [id])
+  skillId   String  @db.ObjectId
+
+  @@unique([userId, skillId])
+}
+
+model JobSkill {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  job       Job     @relation(fields: [jobId], references: [id])
+  jobId     String  @db.ObjectId
+  skill     Skill   @relation(fields: [skillId], references: [id])
+  skillId   String  @db.ObjectId
+
+  @@unique([jobId, skillId])
+}
+
+model LearningResourceSkill {
+  id                   String           @id @default(auto()) @map("_id") @db.ObjectId
+  learningResource     LearningResource @relation(fields: [learningResourceId], references: [id])
+  learningResourceId   String           @db.ObjectId
+  skill                Skill            @relation(fields: [skillId], references: [id])
+  skillId              String           @db.ObjectId
+
+  @@unique([learningResourceId, skillId])
+}
+
+model CareerPathSkill {
+  id             String       @id @default(auto()) @map("_id") @db.ObjectId
+  careerPath     CareerPath   @relation(fields: [careerPathId], references: [id])
+  careerPathId   String       @db.ObjectId
+  skill          Skill        @relation(fields: [skillId], references: [id])
+  skillId        String       @db.ObjectId
+
+  @@unique([careerPathId, skillId])
 }

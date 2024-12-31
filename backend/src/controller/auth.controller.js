@@ -1,7 +1,7 @@
 const { PrismaClient } = require("@prisma/client");
 const jwt = require("jsonwebtoken");
 
-const db = new PrismaClient();
+const db = new PrismaClient(); // Added initialization
 
 const isTokenExpired = (token) => {
   try {
@@ -56,9 +56,9 @@ const generateAccessAndRefreshTokens = async (id) => {
   }
 };
 
-const RegisterControlloer = async (req, res) => {
+const RegisterController = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, username, password } = req.body; // Extracted username
     const existingUser = await db.user.findFirst({
       where: { email: email },
     });
@@ -71,6 +71,7 @@ const RegisterControlloer = async (req, res) => {
       data: {
         email: email,
         password: password,
+        username: username, // Included username
       },
     });
     const { accessToken, refreshToken } = await generateAccessAndRefreshTokens(
@@ -98,7 +99,7 @@ const RegisterControlloer = async (req, res) => {
   }
 };
 
-const LoginControlloer = async (req, res) => {
+const LoginController = async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await db.user.findFirst({
@@ -268,8 +269,8 @@ const validateToken = async (req, res) => {
 module.exports = {
   generateAccessAndRefreshTokens,
   isTokenExpired,
-  RegisterControlloer,
-  LoginControlloer,
+  RegisterController,
+  LoginController,
   LogoutController,
   RefreshAccessTokenController,
   validateToken,

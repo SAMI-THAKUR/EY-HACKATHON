@@ -1,7 +1,61 @@
 const express = require("express");
-const userRouter = express.Router();
-const { getUser } = require("../controller/user.controller");
+const router = express.Router();
+const { 
+  getUser, 
+  createUserPortfolio, 
+  getUserPortfolio, 
+  updateUserPortfolio, 
+  deleteUserPortfolio,
+  createMockInterview,
+  getMockInterview,
+  updateMockInterview,
+  deleteMockInterview,
+  listMockInterviews,
+  addSkillToUser,
+  removeSkillFromUser,
+  createUser,
+} = require("../controller/user.controller");
 
-userRouter.get("/getuser", getUser);
+router.get("/getuser", getUser);
+router.post('/users', createUser); // Added POST /users route
+router.post('/portfolio', createUserPortfolio);
+router.get('/portfolio/:userId', getUserPortfolio);
+router.put('/portfolio/:userId', updateUserPortfolio);
+router.delete('/portfolio/:userId', deleteUserPortfolio);
 
-module.exports = userRouter;
+router.post('/mock-interview', createMockInterview);
+router.get('/mock-interview/:id', getMockInterview);
+router.put('/mock-interview/:id', updateMockInterview);
+router.delete('/mock-interview/:id', deleteMockInterview);
+router.get('/mock-interviews', listMockInterviews);
+
+router.post('/users/:userId/skills', addSkillToUser);
+router.delete('/users/:userId/skills/:skillId', removeSkillFromUser);
+
+router.get('/profiles', async (req, res) => {
+  try {
+    const users = await prisma.user.findMany({
+      include: {
+        resumes: true,
+        posts: true,
+        mockInterviews: true,
+        userSkills: {
+          include: {
+            skill: true,
+          },
+        },
+        events: true,
+        careerPaths: true,
+        learningResources: true,
+      },
+    });
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch profiles." });
+  }
+});
+// router.get('/getuser', userController.getUser);
+
+// router.post('/users', userController.createUser);
+
+module.exports = router;
