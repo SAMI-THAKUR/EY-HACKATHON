@@ -1,13 +1,14 @@
 import { useSelector } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Spinner from "./components/Spinner";
-import { Home, Dashboard, StudentTable, Generate, Calendar, Profile } from "./Pages/pages.js";
+import { Home, Dashboard, Generate, Calendar, Profile } from "./Pages/pages.js";
 import Register from "./Pages/auth/Register";
 import Login from "./Pages/auth/Login";
 import ProtectedPage from "./components/ProtectedPage";
 // import Home from "./Pages/Home";
 import Layout from "./components/Layout";
 import Landings from "./landingPages/Landings.jsx";
+import CommunityPage from './Pages/Community/CommunityPage';
 // import Generate from "./Pages/Generate";
 // import Calendar from "./Pages/Calendar";
 // import Profile from "./Pages/Profile";
@@ -24,8 +25,9 @@ const App = () => {
       {loading && <Spinner />}
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Landings />} />
           <Route
-            path="/"
+            path="/home"
             element={
               <Layout>
                 <Home />
@@ -33,21 +35,13 @@ const App = () => {
             }
           />
           <Route
-          path="/landing-pages"
-          element={
+            path="/landing-pages"
+            element={
               <Landings/>
           }
+          
           />
-          <Route
-            path="/dashboard/:subject"
-            element={
-              // <ProtectedPage>
-              <Layout>
-                <StudentTable />
-              </Layout>
-              // </ProtectedPage>
-            }
-          />
+        
           <Route
             path="/dashboard"
             element={
@@ -88,7 +82,14 @@ const App = () => {
               // </ProtectedPage>
             }
           />
-
+          <Route
+            path="/community"
+            element={
+              <Layout>
+                <CommunityPage />
+              </Layout>
+            }
+          />
           <Route path="/auth/login" element={<Login />} />
           <Route path="/auth/register" element={<Register />} />
         </Routes>

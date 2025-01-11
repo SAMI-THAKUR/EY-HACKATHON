@@ -1,0 +1,264 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "author": {
+        "name": "Sarah Chen",
+        "role": "Tech Lead at Google",
+        "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+      },
+      "content": "Just published a new article on scaling microservices. Check it out! Here's my perspective on handling distributed systems at scale.",
+      "likes": 234,
+      "comments": 45,
+      "time": "2h ago",
+      "tags": ["microservices", "architecture", "scaling"]
+    },
+    {
+      "id": 2,
+      "author": {
+        "name": "Alex Thompson",
+        "role": "Senior Developer at Microsoft",
+        "avatar": "https://images.unsplash.com/photo-1527980965255-d3b416303d12"
+      },
+      "content": "Excited to share my latest React performance optimization techniques! Let me know your thoughts on virtual DOM and memo usage.",
+      "likes": 156,
+      "comments": 23,
+      "time": "4h ago",
+      "tags": ["react", "javascript", "performance"]
+    },
+    {
+      "id": 3,
+      "author": {
+        "name": "Emily Rodriguez",
+        "role": "AI Research Engineer",
+        "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80"
+      },
+      "content": "Working on a new machine learning model for natural language processing. The results are promising!",
+      "likes": 312,
+      "comments": 67,
+      "time": "6h ago",
+      "tags": ["ai", "machine-learning", "nlp"]
+    },
+    {
+      "id": 4,
+      "author": {
+        "name": "David Kim",
+        "role": "UX Designer at Apple",
+        "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
+      },
+      "content": "Here's a sneak peek at my latest design system implementation. Focus on accessibility and user experience.",
+      "likes": 189,
+      "comments": 34,
+      "time": "8h ago",
+      "tags": ["design", "ux", "accessibility"]
+    },
+    {
+      "id": 5,
+      "author": {
+        "name": "Lisa Wang",
+        "role": "Cloud Architect at AWS",
+        "avatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f"
+      },
+      "content": "New tutorial on serverless architecture and AWS Lambda functions coming soon!",
+      "likes": 245,
+      "comments": 56,
+      "time": "10h ago",
+      "tags": ["aws", "serverless", "cloud"]
+    },
+    {
+      "id": 6,
+      "author": {
+        "name": "Marcus Johnson",
+        "role": "Security Engineer",
+        "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+      },
+      "content": "Important security tips for protecting your web applications. Thread 🧵",
+      "likes": 423,
+      "comments": 89,
+      "time": "12h ago",
+      "tags": ["security", "web", "cybersecurity"]
+    },
+    {
+      "id": 7,
+      "author": {
+        "name": "Rachel Green",
+        "role": "Mobile Developer",
+        "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb"
+      },
+      "content": "Swift vs React Native - My experience with both for mobile development",
+      "likes": 167,
+      "comments": 45,
+      "time": "14h ago",
+      "tags": ["mobile", "ios", "react-native"]
+    },
+    {
+      "id": 8,
+      "author": {
+        "name": "Michael Zhang",
+        "role": "Data Scientist",
+        "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+      },
+      "content": "Sharing my insights on data visualization techniques using Python and D3.js",
+      "likes": 289,
+      "comments": 34,
+      "time": "16h ago",
+      "tags": ["data-science", "python", "visualization"]
+    },
+    {
+      "id": 9,
+      "author": {
+        "name": "Emma Wilson",
+        "role": "DevOps Engineer",
+        "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80"
+      },
+      "content": "Kubernetes deployment strategies explained with real-world examples",
+      "likes": 345,
+      "comments": 67,
+      "time": "18h ago",
+      "tags": ["kubernetes", "devops", "docker"]
+    },
+    {
+      "id": 10,
+      "author": {
+        "name": "James Lee",
+        "role": "Blockchain Developer",
+        "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+      },
+      "content": "Understanding smart contracts and Web3 development fundamentals",
+      "likes": 234,
+      "comments": 56,
+      "time": "20h ago",
+      "tags": ["blockchain", "web3", "ethereum"]
+    },
+    {
+      "id": 11,
+      "author": {
+        "name": "Sophie Martin",
+        "role": "Product Manager",
+        "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb"
+      },
+      "content": "The importance of user research in product development - A case study",
+      "likes": 178,
+      "comments": 43,
+      "time": "22h ago",
+      "tags": ["product", "research", "ux"]
+    },
+    {
+      "id": 12,
+      "author": {
+        "name": "Daniel Brown",
+        "role": "Game Developer",
+        "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
+      },
+      "content": "Unity vs Unreal Engine - Comparing performance and development workflow",
+      "likes": 267,
+      "comments": 89,
+      "time": "1d ago",
+      "tags": ["gaming", "unity", "unreal"]
+    },
+    {
+      "id": 13,
+      "author": {
+        "name": "Nina Patel",
+        "role": "ML Engineer",
+        "avatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f"
+      },
+      "content": "Deep learning models for computer vision - Recent advancements",
+      "likes": 412,
+      "comments": 76,
+      "time": "1d ago",
+      "tags": ["deep-learning", "ai", "computer-vision"]
+    },
+    {
+      "id": 14,
+      "author": {
+        "name": "Chris Anderson",
+        "role": "Frontend Lead",
+        "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+      },
+      "content": "Modern CSS techniques for responsive layouts and animations",
+      "likes": 156,
+      "comments": 34,
+      "time": "1d ago",
+      "tags": ["css", "frontend", "web"]
+    },
+    {
+      "id": 15,
+      "author": {
+        "name": "Laura Chen",
+        "role": "System Architect",
+        "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb"
+      },
+      "content": "Microservices vs Monolith - Making the right architectural choice",
+      "likes": 289,
+      "comments": 67,
+      "time": "1d ago",
+      "tags": ["architecture", "microservices", "system-design"]
+    },
+    {
+      "id": 16,
+      "author": {
+        "name": "Tom Wilson",
+        "role": "Security Consultant",
+        "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+      },
+      "content": "Common security vulnerabilities in web applications and how to prevent them",
+      "likes": 345,
+      "comments": 88,
+      "time": "2d ago",
+      "tags": ["security", "web", "authentication"]
+    },
+    {
+      "id": 17,
+      "author": {
+        "name": "Maria Garcia",
+        "role": "QA Engineer",
+        "avatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f"
+      },
+      "content": "Automated testing strategies for modern web applications",
+      "likes": 167,
+      "comments": 45,
+      "time": "2d ago",
+      "tags": ["testing", "automation", "qa"]
+    },
+    {
+      "id": 18,
+      "author": {
+        "name": "Kevin Park",
+        "role": "iOS Developer",
+        "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
+      },
+      "content": "SwiftUI tips and tricks for building better iOS apps",
+      "likes": 234,
+      "comments": 56,
+      "time": "2d ago",
+      "tags": ["ios", "swift", "mobile"]
+    },
+    {
+      "id": 19,
+      "author": {
+        "name": "Amanda Lewis",
+        "role": "DevOps Manager",
+        "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb"
+      },
+      "content": "CI/CD pipeline optimization techniques for faster deployments",
+      "likes": 278,
+      "comments": 67,
+      "time": "2d ago",
+      "tags": ["devops", "ci-cd", "automation"]
+    },
+    {
+      "id": 20,
+      "author": {
+        "name": "Ryan Cooper",
+        "role": "Backend Developer",
+        "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+      },
+      "content": "Building scalable APIs with Node.js and Express",
+      "likes": 198,
+      "comments": 45,
+      "time": "2d ago",
+      "tags": ["nodejs", "api", "backend"]
+    }
+  ]
+}

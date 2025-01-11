@@ -1,0 +1,49 @@
+{
+  "peers": [
+    {
+      "id": 1,
+      "name": "Alex Thompson",
+      "role": "Frontend Developer",
+      "avatar": "https://images.unsplash.com/photo-1527980965255-d3b416303d12",
+      "skills": ["React", "TypeScript", "Node.js"],
+      "matchScore": "95%",
+      "mutualConnections": 12
+    },
+    {
+      "id": 2,
+      "name": "Lisa Wong",
+      "role": "UX Designer",
+      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80",
+      "skills": ["Figma", "UI Design", "User Research"],
+      "matchScore": "88%",
+      "mutualConnections": 8
+    },
+    {
+      "id": 3,
+      "name": "Mike Johnson",
+      "role": "Backend Developer",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+      "skills": ["Python", "Django", "AWS"],
+      "matchScore": "85%",
+      "mutualConnections": 15
+    },
+    {
+      "id": 4,
+      "name": "Emily Chen",
+      "role": "Data Scientist",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
+      "skills": ["Python", "Machine Learning", "SQL"],
+      "matchScore": "82%",
+      "mutualConnections": 6
+    },
+    {
+      "id": 5,
+      "name": "David Park",
+      "role": "Mobile Developer",
+      "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
+      "skills": ["React Native", "iOS", "Android"],
+      "matchScore": "78%",
+      "mutualConnections": 9
+    }
+  ]
+}

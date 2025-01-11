@@ -2,12 +2,12 @@ import React from 'react';
 import ReactApexChart from "react-apexcharts";
 
 const BarChart = () => {
-    const colors = ['#008FFB', '#00E396', '#FEB019', '#FF4560', '#775DD0', '#546E7A', '#26a69a', '#D10CE8'];
+    const colors = ['#4F46E5', '#059669', '#7C3AED', '#DB2777', '#2563EB'];
 
     const options = {
         series: [{
-            name: 'Test Scores',
-            data: [85, 92, 78, 95, 88, 90, 82, 97, 86, 93, 79, 91, 84]
+            name: 'Current Level',
+            data: [78, 85, 90, 92, 88, 95]
         }],
         chart: {
             height: 350,
@@ -22,65 +22,98 @@ const BarChart = () => {
         colors: colors,
         plotOptions: {
             bar: {
-                columnWidth: '45%',
+                columnWidth: '60%',
                 distributed: true,
+                borderRadius: 5,
+                dataLabels: {
+                    position: 'top'
+                }
             }
         },
         dataLabels: {
-            enabled: false
+            enabled: true,
+            formatter: function (val) {
+                return val + '%';
+            },
+            style: {
+                fontSize: '12px',
+                colors: ['#fff']
+            }
         },
         legend: {
             show: false
         },
         xaxis: {
             categories: [
-                ['John', 'Doe'],
-                ['Joe', 'Smith'],
-                ['Jake', 'Williams'],
-                'Amber',
-                ['Peter', 'Brown'],
-                ['Mary', 'Evans'],
-                ['David', 'Wilson'],
-                ['Lily', 'Roberts'],
-                ['Sophia', 'Turner'],
-                ['James', 'Miller'],
-                ['Olivia', 'Anderson'],
-                ['Michael', 'Clark'],
-                ['Emma', 'Thompson']
+                'Technical Expertise',
+                'Industry Knowledge',
+                'Leadership Skills',
+                'Problem Solving',
+                'Domain Expertise',
+                'Career Readiness'
             ],
             labels: {
                 style: {
                     colors: colors,
-                    fontSize: '12px'
-                }
+                    fontSize: '13px',
+                    fontWeight: 500
+                },
+                rotate: -45,
+                trim: true
             },
             tickPlacement: 'on'
         },
         yaxis: {
             title: {
-                text: 'Test Scores'
+                text: 'Proficiency Level (%)',
+                style: {
+                    fontSize: '14px',
+                    fontWeight: 500
+                }
             },
             min: 0,
-            max: 100
+            max: 100,
+            labels: {
+                formatter: function (val) {
+                    return val + '%';
+                }
+            }
         },
         title: {
-            text: 'Student Test Scores',
+            text: 'Career Skill Development Progress',
             align: 'center',
             margin: 10,
             offsetY: 0,
             style: {
                 fontSize: '20px',
+                fontWeight: 600
             },
         },
         grid: {
-            show: false
+            borderColor: '#f1f1f1',
+            opacity: 0.1
+        },
+        tooltip: {
+            y: {
+                formatter: function(val) {
+                    return val + '% Proficiency'
+                }
+            }
+        },
+        theme: {
+            mode: 'dark'
         }
     };
 
     return (
-        <div className="w-full overflow-x-auto">
-            <div className="min-w-[1200px]">
-                <ReactApexChart options={options} series={options.series} type="bar" height={350} />
+        <div className="w-full bg-gray-800/50 rounded-xl p-4 backdrop-blur-sm border border-gray-700">
+            <div className="min-w-[600px]">
+                <ReactApexChart 
+                    options={options} 
+                    series={options.series} 
+                    type="bar" 
+                    height={350} 
+                />
             </div>
         </div>
     );

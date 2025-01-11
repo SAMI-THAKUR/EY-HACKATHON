@@ -8,6 +8,7 @@ import {
     ChevronRight,
     User2Icon
   } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 function CoreFeatures(){
     const features = [
@@ -49,29 +50,36 @@ function CoreFeatures(){
         }
       ];
     return (
-        <div className="flex flex-col justify-center items-center w-screen h-auto py-12 px-6 bg-gray-900">
+        <div className="flex flex-col justify-center items-center w-screen h-full py-12 px-6 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-16">Our Core Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {features.map((feature, index) => (
-              <div key={index} className="bg-gray-700 rounded-xl shadow-lg p-8 transform hover:-translate-y-1 transition-all duration-300">
-                <div className="flex items-center mb-4">
-                  <div className="p-2 bg-indigo-600 rounded-lg">
-                    {feature.icon}
+            {features.map((feature, index) => {
+              const elementRef = useScrollAnimation();
+              return (
+                <div 
+                  ref={elementRef}
+                  key={index} 
+                  className="opacity-0 bg-gray-700 rounded-xl shadow-lg p-8 transform hover:-translate-y-1 transition-all duration-300"
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="p-2 bg-indigo-600 rounded-lg">
+                      {feature.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold ml-3">{feature.title}</h3>
                   </div>
-                  <h3 className="text-xl font-semibold ml-3">{feature.title}</h3>
+                  <p className="text-gray-300 mb-6">{feature.description}</p>
+                  <ul className="space-y-3">
+                    {feature.subFeatures.map((subFeature, idx) => (
+                      <li key={idx} className="flex items-center text-gray-200">
+                        <CheckCircle className="w-5 h-5 text-indigo-400 mr-3" />
+                        {subFeature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <p className="text-gray-300 mb-6">{feature.description}</p>
-                <ul className="space-y-3">
-                  {feature.subFeatures.map((subFeature, idx) => (
-                    <li key={idx} className="flex items-center text-gray-200">
-                      <CheckCircle className="w-5 h-5 text-indigo-400 mr-3" />
-                      {subFeature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
