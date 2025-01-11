@@ -28,9 +28,17 @@ const App = () => {
             path="/"
             element={
               <Layout>
-                <Home />
+                <Landings />
               </Layout>
             }
+          />
+          <Route
+          path="/home"
+          element={
+            <Layout>
+              <Home/>
+            </Layout>
+          }
           />
           <Route
           path="/landing-pages"

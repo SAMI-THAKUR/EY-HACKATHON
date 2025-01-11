@@ -5,6 +5,7 @@ import {
 } from 'lucide-react';
 import Lakshya from './Lakshya.png';
 import CustomBg from './CustomBg.png';
+import { Link } from 'react-router-dom';
 
 function HeroSection(){
     const [isVisible, setIsVisible] = useState(false);
@@ -32,20 +33,12 @@ function HeroSection(){
             <p className="max-w-3xl text-lg md:text-2xl">
               Your AI-Powered Career Growth Companion. Bridge Skills, Build Networks, Land Opportunities.
             </p>
-            <div className='mt-4 flex w-full max-w-xl'>
-          <input 
-            type="text" 
-            placeholder='Search your desired job...' 
-            className='w-full p-4 px-7 text-black rounded-l-xl border border-gray-300 focus:border-none focus:outline-none shadow-lg'
-          />
-          <button className='bg-indigo-800 p-4 px-7 rounded-r-xl shadow-lg text-white hover:bg-indigo-800 transform hover:transtion smooth duration-250'>
-            Search
-          </button>
-        </div>
             <div className="flex flex-col p-4 sm:flex-row justify-center gap-4">
+              <Link to="/home">
               <button className="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-500 transition-colors inline-flex items-center justify-center">
                 Get Started <ArrowRight className="ml-2 w-5 h-5" />
               </button>
+             </Link>
               <button className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors inline-flex items-center justify-center">
                 Watch Demo <Video className="ml-2 w-5 h-5" />
               </button>
