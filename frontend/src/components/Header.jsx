@@ -63,7 +63,7 @@ export default function Header() {
               <ul className="pr-12 flex items-center h-full">
                 <li
                   onClick={() => {
-                    navigate("/");
+                    navigate("/home");
                     dispatch(setNav("/home"));
                   }}
                   className={`cursor-pointer h-full flex items-center hover:text-indigo-700 text-white tracking-normal ${
