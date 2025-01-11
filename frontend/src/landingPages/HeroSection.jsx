@@ -26,16 +26,17 @@ function HeroSection(){
                     className="object-cover opacity-20"
                 />
             </div>
-            <div className="relative container mx-auto px-4 py-24 flex flex-col items-center justify-center text-center">
+            <div className="relative container mx-auto px-4 py-12 flex flex-col md:flex-row items-center justify-center">
+                <img src={Lakshya} alt="Lakshya" className="mb-6 max-w-xl rounded-lg md:mr-8" />
                 <div className={`max-w-4xl mx-auto transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                     <div className="inline-flex items-center px-4 py-2 bg-gray-800/50 rounded-full mb-8 border border-gray-700">
                         <Sparkles className="w-4 h-4 mr-2 text-yellow-400" />
                         <span className="text-sm">AI-Powered Career Development Platform</span>
                     </div>
-                    <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+                    <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
                         Transform Your Career Journey with <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-400">Lakshya</span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
+                    <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl">
                         Your personalized AI companion for career growth. Get data-driven insights, 
                         skill assessments, and expert guidance to accelerate your professional success.
                     </p>
@@ -51,8 +52,10 @@ function HeroSection(){
                         </button>
                     </div>
                 </div>
+            </div>
 
-                {/* Stats Section */}
+            {/* Stats Section */}
+            <div className="container mx-auto px-4 pb-16">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                     <div className="bg-gray-800/30 border border-gray-700 backdrop-blur-sm rounded-xl p-8 transform hover:-translate-y-1 transition-all duration-300">
                         <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">10K+</div>
