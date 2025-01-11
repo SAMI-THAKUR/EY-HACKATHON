@@ -1,0 +1,54 @@
+{
+  "mentors": [
+    {
+      "id": 1,
+      "name": "Dr. Sarah Chen",
+      "role": "Tech Lead at Google",
+      "status": "online",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+      "expertise": ["System Design", "Cloud Architecture", "Leadership"],
+      "rating": 4.9,
+      "totalMentees": 156
+    },
+    {
+      "id": 2,
+      "name": "John Miller",
+      "role": "Senior Designer at Apple",
+      "status": "away",
+      "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
+      "expertise": ["UI/UX Design", "Design Systems", "Product Design"],
+      "rating": 4.8,
+      "totalMentees": 89
+    },
+    {
+      "id": 3,
+      "name": "Maria Rodriguez",
+      "role": "Staff Engineer at Meta",
+      "status": "online",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
+      "expertise": ["Frontend", "React", "Performance"],
+      "rating": 4.9,
+      "totalMentees": 234
+    },
+    {
+      "id": 4,
+      "name": "Alex Kumar",
+      "role": "Engineering Manager at Netflix",
+      "status": "offline",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+      "expertise": ["Engineering Management", "System Design", "Career Growth"],
+      "rating": 4.7,
+      "totalMentees": 167
+    },
+    {
+      "id": 5,
+      "name": "Lisa Wang",
+      "role": "AI Research Lead at OpenAI",
+      "status": "online",
+      "avatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f",
+      "expertise": ["Machine Learning", "AI Ethics", "Python"],
+      "rating": 4.9,
+      "totalMentees": 198
+    }
+  ]
+}

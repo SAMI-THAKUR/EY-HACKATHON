@@ -18,7 +18,6 @@ const App = () => {
   if (loading) {
     return <Spinner />;
   }
-
   return (
     <div className="overflow-x-hidden">
       {loading && <Spinner />}

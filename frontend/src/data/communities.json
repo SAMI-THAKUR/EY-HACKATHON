@@ -1,0 +1,49 @@
+{
+  "communities": [
+    {
+      "id": "frontend",
+      "name": "Frontend Development",
+      "description": "Community for frontend developers to share knowledge and best practices",
+      "members": 12000,
+      "activity": "high",
+      "channels": ["general", "react", "vue", "angular", "css"],
+      "icon": "🎨"
+    },
+    {
+      "id": "ai-ml",
+      "name": "AI & Machine Learning",
+      "description": "Discuss latest trends in AI and ML",
+      "members": 15000,
+      "activity": "high",
+      "channels": ["general", "deep-learning", "nlp", "computer-vision"],
+      "icon": "🤖"
+    },
+    {
+      "id": "design",
+      "name": "Design Community",
+      "description": "For UI/UX designers and design enthusiasts",
+      "members": 8500,
+      "activity": "medium",
+      "channels": ["general", "ui-design", "ux-research", "tools"],
+      "icon": "✨"
+    },
+    {
+      "id": "backend",
+      "name": "Backend Engineering",
+      "description": "Backend development discussions and resources",
+      "members": 10000,
+      "activity": "high",
+      "channels": ["general", "nodejs", "python", "java", "databases"],
+      "icon": "⚙️"
+    },
+    {
+      "id": "devops",
+      "name": "DevOps & Cloud",
+      "description": "Cloud computing and DevOps practices",
+      "members": 9000,
+      "activity": "medium",
+      "channels": ["general", "aws", "kubernetes", "ci-cd"],
+      "icon": "☁️"
+    }
+  ]
+}

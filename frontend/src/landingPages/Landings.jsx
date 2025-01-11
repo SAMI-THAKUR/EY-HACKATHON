@@ -17,17 +17,25 @@ const LandingHome = () => {
   return (
     <div className="w-screen min-h-screen bg-gray-900 text-white">
       
-      {/* Hero Section */}
-      <HeroSection/>
-      {/* Core Features */}
-      <CoreFeatures/>
-      {/* Testimonials */}
-      <Testimonials/>
-      {/* CTA Section */}
-      <CTA/>
+      {/* Full page section containing Hero and Core Features */}
+      <div className="min-h-screen flex flex-col">
+        <div className="flex-1">
+          <HeroSection/>
+        </div>
+        <div className="flex-1">
+          <CoreFeatures/>
+        </div>
+      </div>
+
+      {/* Scrollable sections */}
+      <div>
+        <Testimonials/>
+        <CTA/>
+      </div>
+
       {/* Footer */}
       <footer className="w-full h-full bg-gray-900 text-white py-12">
-        <div className="max-w-7xl h-full  mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl h-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-xl font-bold mb-4">Lakshya</h3>
@@ -45,7 +53,8 @@ const LandingHome = () => {
                 <li>Learning Pathways</li>
                 <li>Community</li>
                 <li>Career Support</li>
-              </ul></div>
+              </ul>
+            </div>
             <div>
               <h4 className="font-semibold mb-4">Resources</h4>
               <ul className="space-y-2 text-gray-400">
@@ -70,7 +79,6 @@ const LandingHome = () => {
           </div>
         </div>
       </footer>
-
     </div>
   );
 };

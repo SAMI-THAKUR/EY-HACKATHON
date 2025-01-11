@@ -1,0 +1,259 @@
+{
+  "chats": [
+    {
+      "id": 1,
+      "channel": "general",
+      "messages": [
+        {
+          "id": 1,
+          "author": {
+            "name": "Sarah Chen",
+            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+          },
+          "content": "Welcome everyone to our tech community! 👋",
+          "timestamp": "2024-01-20T10:00:00Z"
+        },
+        {
+          "id": 2,
+          "author": {
+            "name": "Alex Thompson",
+            "avatar": "https://images.unsplash.com/photo-1527980965255-d3b416303d12"
+          },
+          "content": "Thanks for having us! Looking forward to great discussions.",
+          "timestamp": "2024-01-20T10:01:00Z"
+        },
+        {
+          "id": 3,
+          "author": {
+            "name": "Lisa Wong",
+            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80"
+          },
+          "content": "Hello everyone! I'm a UX designer from San Francisco.",
+          "timestamp": "2024-01-20T10:02:00Z"
+        },
+        {
+          "id": 4,
+          "author": {
+            "name": "David Kim",
+            "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
+          },
+          "content": "Great to see such a diverse group of tech professionals here!",
+          "timestamp": "2024-01-20T10:03:00Z"
+        },
+        {
+          "id": 5,
+          "author": {
+            "name": "Maria Rodriguez",
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb"
+          },
+          "content": "Anyone interested in collaborating on open source projects?",
+          "timestamp": "2024-01-20T10:04:00Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "channel": "frontend",
+      "messages": [
+        {
+          "id": 1,
+          "author": {
+            "name": "Chris Anderson",
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+          },
+          "content": "What's everyone's take on the new React server components?",
+          "timestamp": "2024-01-20T11:00:00Z"
+        },
+        {
+          "id": 2,
+          "author": {
+            "name": "Sarah Chen",
+            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+          },
+          "content": "They're game-changing for performance optimization!",
+          "timestamp": "2024-01-20T11:01:00Z"
+        },
+        {
+          "id": 3,
+          "author": {
+            "name": "Alex Thompson",
+            "avatar": "https://images.unsplash.com/photo-1527980965255-d3b416303d12"
+          },
+          "content": "I'm still learning them, but the concepts are fascinating.",
+          "timestamp": "2024-01-20T11:02:00Z"
+        },
+        {
+          "id": 4,
+          "author": {
+            "name": "Emily Chen",
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb"
+          },
+          "content": "Has anyone implemented them in a production app yet?",
+          "timestamp": "2024-01-20T11:03:00Z"
+        },
+        {
+          "id": 5,
+          "author": {
+            "name": "Michael Zhang",
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+          },
+          "content": "We're using them at work, happy to share our experience!",
+          "timestamp": "2024-01-20T11:04:00Z"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "channel": "design",
+      "messages": [
+        {
+          "id": 1,
+          "author": {
+            "name": "Lisa Wong",
+            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80"
+          },
+          "content": "What design tools is everyone using these days?",
+          "timestamp": "2024-01-20T12:00:00Z"
+        },
+        {
+          "id": 2,
+          "author": {
+            "name": "John Miller",
+            "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
+          },
+          "content": "Figma all the way! The collaboration features are unmatched.",
+          "timestamp": "2024-01-20T12:01:00Z"
+        },
+        {
+          "id": 3,
+          "author": {
+            "name": "Sophie Martin",
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb"
+          },
+          "content": "I'm still using Sketch for some client work, but moving to Figma.",
+          "timestamp": "2024-01-20T12:02:00Z"
+        },
+        {
+          "id": 4,
+          "author": {
+            "name": "David Kim",
+            "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
+          },
+          "content": "Anyone tried the new Figma dev mode features?",
+          "timestamp": "2024-01-20T12:03:00Z"
+        },
+        {
+          "id": 5,
+          "author": {
+            "name": "Emma Wilson",
+            "avatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f"
+          },
+          "content": "Dev mode is amazing for hand-off! Game changer for our workflow.",
+          "timestamp": "2024-01-20T12:04:00Z"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "channel": "backend",
+      "messages": [
+        {
+          "id": 1,
+          "author": {
+            "name": "Mike Johnson",
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+          },
+          "content": "Anyone here using GraphQL in production?",
+          "timestamp": "2024-01-20T13:00:00Z"
+        },
+        {
+          "id": 2,
+          "author": {
+            "name": "Ryan Cooper",
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+          },
+          "content": "Yes! We migrated from REST last year. Best decision ever.",
+          "timestamp": "2024-01-20T13:01:00Z"
+        },
+        {
+          "id": 3,
+          "author": {
+            "name": "James Lee",
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+          },
+          "content": "What's your tech stack for GraphQL implementation?",
+          "timestamp": "2024-01-20T13:02:00Z"
+        },
+        {
+          "id": 4,
+          "author": {
+            "name": "Laura Chen",
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb"
+          },
+          "content": "We're using Apollo Server with Node.js",
+          "timestamp": "2024-01-20T13:03:00Z"
+        },
+        {
+          "id": 5,
+          "author": {
+            "name": "Tom Wilson",
+            "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
+          },
+          "content": "Has anyone tried the new Federation 2.0?",
+          "timestamp": "2024-01-20T13:04:00Z"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "channel": "devops",
+      "messages": [
+        {
+          "id": 1,
+          "author": {
+            "name": "Amanda Lewis",
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb"
+          },
+          "content": "Docker vs Kubernetes for small projects - thoughts?",
+          "timestamp": "2024-01-20T14:00:00Z"
+        },
+        {
+          "id": 2,
+          "author": {
+            "name": "Alex Kumar",
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+          },
+          "content": "Docker Compose is usually sufficient for small projects",
+          "timestamp": "2024-01-20T14:01:00Z"
+        },
+        {
+          "id": 3,
+          "author": {
+            "name": "Nina Patel",
+            "avatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f"
+          },
+          "content": "K8s might be overkill unless you need the scaling features",
+          "timestamp": "2024-01-20T14:02:00Z"
+        },
+        {
+          "id": 4,
+          "author": {
+            "name": "Daniel Brown",
+            "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
+          },
+          "content": "We started with Docker and gradually moved to K8s as we scaled",
+          "timestamp": "2024-01-20T14:03:00Z"
+        },
+        {
+          "id": 5,
+          "author": {
+            "name": "Maria Garcia",
+            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80"
+          },
+          "content": "Anyone using managed K8s services like EKS or GKE?",
+          "timestamp": "2024-01-20T14:04:00Z"
+        }
+      ]
+    }
+  ]
+}

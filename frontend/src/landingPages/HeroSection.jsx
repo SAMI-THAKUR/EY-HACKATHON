@@ -5,10 +5,11 @@ import {
 } from 'lucide-react';
 import Lakshya from './Lakshya.png';
 import CustomBg from './CustomBg.png';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function HeroSection(){
     const [isVisible, setIsVisible] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
       setIsVisible(true);
@@ -25,7 +26,7 @@ function HeroSection(){
           />
         </div>
         <div className="flex flex-col items-center justify-evenly relative w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 md:lg:flex-row">
-          <img src={Lakshya} alt="" className="mb-6 max-w-3xl rounded-lg" />
+          <img src={Lakshya} alt="" className="mb-6 max-w-3xl rounded-lg shadow-lg" />
           <div className={`flex flex-col shadow-lg justify-center items-center bg-black/20 p-5 border border-gray-500 rounded-xl gap-y-2 text-center mr-4 md:lg:m-1 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <h1 className="max-w-3xl text-4xl md:text-5xl font-bold mb-4">
               Transform Your Career <br />with<span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-400"> Lakshya</span>
@@ -34,11 +35,12 @@ function HeroSection(){
               Your AI-Powered Career Growth Companion. Bridge Skills, Build Networks, Land Opportunities.
             </p>
             <div className="flex flex-col p-4 sm:flex-row justify-center gap-4">
-              <Link to="/home">
-              <button className="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-500 transition-colors inline-flex items-center justify-center">
+              <button 
+                onClick={() => navigate('/home')}
+                className="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-500 transition-colors inline-flex items-center justify-center"
+              >
                 Get Started <ArrowRight className="ml-2 w-5 h-5" />
               </button>
-             </Link>
               <button className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors inline-flex items-center justify-center">
                 Watch Demo <Video className="ml-2 w-5 h-5" />
               </button>
