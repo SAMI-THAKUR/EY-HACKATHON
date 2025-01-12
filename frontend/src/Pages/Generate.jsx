@@ -1,6 +1,17 @@
 import { useState } from "react";
+
 const Generate = () => {
   const [file, setFile] = useState(null);
+
+  const handleFileUpload = (e) => {
+    const uploadedFile = e.target.files[0];
+    setFile(uploadedFile);
+    if (uploadedFile) {
+      // Redirect to Streamlit application
+      window.location.href = 'http://localhost:8501';
+    }
+  };
+
   return (
     <div className="flex justify-center items-center h-screen ">
       <label
@@ -10,13 +21,11 @@ const Generate = () => {
         Upload file
       </label>
       <input
-        value={file}
-        onChange={(e) => {
-          setFile(e.target.value);
-        }}
+        onChange={handleFileUpload}
         id="file"
         className="hidden"
         type="file"
+        accept=".pdf,.doc,.docx"
       />
     </div>
   );

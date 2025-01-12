@@ -17,28 +17,37 @@ import { useEffect, useState } from "react";
 export default function Register() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  
   const handleSubmit = async (e) => {
     try {
+      setError("");
       dispatch(setLoader(true));
       e.preventDefault();
-      const res = await RegisterHandler(email, password);
 
-      if (!res.success) {
-        dispatch(setLoader(false));
+      if (!navigator.onLine) {
+        throw new Error("No internet connection. Please check your network.");
+      }
 
-        alert(res.message);
-      } else {
+      const res = await RegisterHandler(username, email, password);
+
+      if (res.success && res.accessToken) {
+        localStorage.setItem('token', res.accessToken);
+        localStorage.setItem('user', JSON.stringify(res.user));
         navigate("/home");
-        dispatch(setLoader(false));
+      } else {
+        throw new Error(res.message || 'Registration failed');
       }
     } catch (error) {
+      setError(error.message || 'Registration failed. Please try again.');
+    } finally {
       dispatch(setLoader(false));
-
-      console.error("Error registering in:", error);
     }
   };
+
   const handleGetUser = async () => {
     try {
       const res = await getUserHandler();
@@ -59,12 +68,25 @@ export default function Register() {
       <Card className="mx-auto max-w-sm">
         <CardHeader>
           <CardTitle className="text-2xl">Register</CardTitle>
-          <CardDescription>
-            Enter your email below to register to your account
-          </CardDescription>
+          <CardDescription>Create your account</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="grid gap-4">
+            {error && (
+              <div className="p-3 text-red-500 bg-red-50 rounded-md text-sm text-center">
+                {error}
+              </div>
+            )}
+            <div className="grid gap-2">
+              <Label htmlFor="username">Username</Label>
+              <Input
+                onChange={(e) => setUsername(e.target.value)}
+                id="username"
+                type="text"
+                placeholder="johndoe123"
+                required
+              />
+            </div>
             <div className="grid gap-2">
               <Label htmlFor="email">Email</Label>
               <input
@@ -96,8 +118,7 @@ export default function Register() {
               Sign up
             </Button>
             <Button variant="outline" className="w-full">
-              <Link to={"http://localhost:3000/auth/google"}>
-                {" "}
+              <Link to={`${import.meta.env.VITE_API_URL}/auth/google`}>
                 Login with Google
               </Link>
             </Button>
