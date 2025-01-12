@@ -5,9 +5,9 @@ import mentorsData from '../../data/mentors.json';
 import peersData from '../../data/peers.json';
 
 const Welcome = ({ 
-  onJoinCommunity, 
+  onJoinCommunity = () => {}, 
   communities = [], 
-  onSelectCommunity 
+  onSelectCommunity = () => {} 
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [posts, setPosts] = useState(postsData.posts.slice(0, 5));
@@ -153,10 +153,5 @@ const Welcome = ({
   );
 };
 
-Welcome.defaultProps = {
-  onJoinCommunity: () => {},
-  communities: [],
-  onSelectCommunity: () => {}
-};
-
 export default Welcome;
+
