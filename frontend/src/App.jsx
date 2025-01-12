@@ -5,6 +5,8 @@ import { Home, Dashboard, StudentTable, Generate, Calendar, Profile } from "./Pa
 import Register from "./Pages/auth/Register";
 import Login from "./Pages/auth/Login";
 import ProtectedPage from "./components/ProtectedPage";
+import Community from "./Pages/Community/CommunityPage.jsx"; // Add this import
+
 // import Home from "./Pages/Home";
 import Layout from "./components/Layout";
 import Landings from "./landingPages/Landings.jsx";
@@ -45,16 +47,7 @@ const App = () => {
               <Landings/>
           }
           />
-          <Route
-            path="/dashboard/:subject"
-            element={
-              // <ProtectedPage>
-              <Layout>
-                <StudentTable />
-              </Layout>
-              // </ProtectedPage>
-            }
-          />
+        
           <Route
             path="/dashboard"
             element={
@@ -83,6 +76,14 @@ const App = () => {
                 <Calendar />
               </Layout>
               // </ProtectedPage>
+            }
+          />
+          <Route
+            path="/community"
+            element={
+              <Layout>
+                <Community />
+              </Layout>
             }
           />
           <Route
