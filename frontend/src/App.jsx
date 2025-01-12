@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Spinner from "./components/Spinner";
-import { Home, Dashboard, StudentTable, Generate, Calendar, Profile } from "./Pages/pages.js";
+import { Home, Dashboard, Generate, Calendar, Profile } from "./Pages/pages.js";
 import Register from "./Pages/auth/Register";
 import Login from "./Pages/auth/Login";
 import ProtectedPage from "./components/ProtectedPage";
@@ -18,43 +18,27 @@ const App = () => {
   if (loading) {
     return <Spinner />;
   }
+
   return (
     <div className="overflow-x-hidden">
       {loading && <Spinner />}
       <BrowserRouter>
         <Routes>
           <Route
-            path="/"
+            path="/home"
             element={
               <Layout>
-                <Landings />
+                <Home />
               </Layout>
             }
           />
           <Route
-          path="/home"
-          element={
-            <Layout>
-              <Home/>
-            </Layout>
-          }
-          />
-          <Route
-          path="/landing-pages"
+          path="/"
           element={
               <Landings/>
           }
           />
-          <Route
-            path="/dashboard/:subject"
-            element={
-              // <ProtectedPage>
-              <Layout>
-                <StudentTable />
-              </Layout>
-              // </ProtectedPage>
-            }
-          />
+          
           <Route
             path="/dashboard"
             element={
